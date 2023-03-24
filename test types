@@ -1,0 +1,25 @@
+Functionality Test pyramid:
+
+1. unit test 
+  a. sociable
+  b. isolated
+2. contract test (we can use Pact)
+  a. consumer side
+  b. provider side
+3. integration test : to make sure that the microservices can communicate with one another and their own `databases`.
+4. component test: is a type of acceptance testing in which we examine the component’s behavior in isolation by substituting services with simulated resources or mocking.
+5. E2E test
+
+
+
+Performance Test Types:
+
+A performance test is any test that measures stability, performance, scalability and/or throughput of your web application(s).
+
+1. Capacity Test: A capacity test is a test to determine how many users your application can handle before either performance or stability becomes unacceptable.  By knowing the number of users your application can handle “successfully”, you will have better visibility into events that might push your site beyond its limitations. This is a way to avoid potential problems in the future.
+
+2. Load Test(up to threshold): A load test consists of applying load to an application and measuring the results. The load may or may not be at the high end of application capacity.  These tests can help determine normal performance metrics.  By using iterative testing, you can determine whether new code has helped or hurt performance.
+
+3. Stress Test(over threshold): A stress test is a test that pushes an application beyond normal load conditions.  When you push your application to the extreme, you will see which components fail first.  Making these components more robust, or efficient, will help determine new thresholds.
+
+4. Soak Test(over time): A soak test is a long-running test that is used to determine application performance and/or stability over time. An application may work well for an hour or two, and then start to experience issues. These tests are especially useful when trying to track down memory leaks or corruption.
