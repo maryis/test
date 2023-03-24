@@ -1,3 +1,4 @@
+## Tools #
 - Test management tools: TestRail or Xray or TestPad, ...
 - Automation test (E2E): Selenium, testim, Watir, ...
 - Performance test: Jmeter, webload, neoload, ...
@@ -8,7 +9,22 @@
 - Mobile/android testing: Appium, Testroid, ...
 - Unit test: Junit, TestNG, Mockito, Nunit, ...
 
+## note: ##
 
-When doing Integration test, coponent test, or load test, sometimes we need to mock external dependencies. Some example tools:
-Blazemeter, MockServer(has docker image), ...
-Please note that we mock third party calls using Mockito, or ... when we do unit/IT tests in CI/CD pipeline. But we can use mockservers in test environments for E2E, component, or load tests
+1- When doing Integration test, component test, or load test, sometimes we need to mock external dependencies. Some example tools:
+MockServer(has docker image), Blazemeter, ...
+more references on MockServer :
+https://one2n.in/blogs/efficient-test-suite-using-mockserver-and-testcontainers/
+https://www.jessym.com/articles/java-integration-testing#end-to-end-test
+https://www.testcontainers.org/modules/mockserver/
+
+2- When doing Integration test, component test, or load test, sometimes we need to spin up external dependencies as a container in current environment. A great library for this is TestContainer:
+You can find all java based testcontainers here:
+https://www.testcontainers.org/modules/localstack/
+For example: 
+- mockServer
+- database
+- localstack
+- kafka
+
+
