@@ -1,0 +1,32 @@
+1- MEMORY DUMP:
+
+# kubectl exec -it <mypod> -c app /bin/sh
+# ps -ef | grep java
+# jcmd <pid> GC.heap_dump /tmp/myheap.hprof
+# kubectl cp <mypod>:/tmp/myheap.hprof -c app
+
+-> use azul to open and analyse file
+Repeat the Steps after a while so we could compare the heap usage in that period
+
+
+2- JFR for profiling and diagnozing
+
+# kubectl exec -it <mypod> -c app /bin/sh
+# ps -ef | grep java
+# jcmd 1 JFR.start filename=/tmp/test_recording_1.jfr
+... wait for 2 minutes
+# jcmd 1 JFR.dump name=1
+# kubectl cp <mypod>:/tmp/test_recording_1.jfr -c app
+-> use azul to open and analyse file
+
+Note: if you are using dev environment, then use Jmeter to create load and then start profiler
+you can add "Aggregate Report" listener, and check 90th, 95th, and 99th pct latency.
+to get rid of the noise from JIT, I run the load tests three times and recorded the <last one's> report.
+Also you can share output by using "JMeter HTML Dashboard Report"
+
+
+One sample we did for SOS:
+created load via jmeter, and captured JFR file -> found the monitor class that blocks thread (long lock)
+then create a branch and did the fix
+then usin the same jmeter plan, we repeated capturing JFR while branch was deployed to environment
+then we copmared "aggregate report" of master and branch in jmeter to find out how much the fix improved the latency
