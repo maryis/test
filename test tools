@@ -11,3 +11,4 @@
 
 When doing Integration test, coponent test, or load test, sometimes we need to mock external dependencies. Some example tools:
 Blazemeter, MockServer(has docker image), ...
+Please note that we mock third party calls using Mockito, or ... when we do unit/IT tests in CI/CD pipeline. But we can use mockservers in test environments for E2E, component, or load tests
