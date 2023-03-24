@@ -19,6 +19,7 @@ A performance test is any test that measures stability, performance, scalability
 1. Capacity Test: A capacity test is a test to determine how many users your application can handle before either performance or stability becomes unacceptable.  By knowing the number of users your application can handle “successfully”, you will have better visibility into events that might push your site beyond its limitations. This is a way to avoid potential problems in the future.
 
 2. Load Test(up to threshold): A load test consists of applying load to an application and measuring the results. The load may or may not be at the high end of application capacity.  These tests can help determine normal performance metrics.  By using iterative testing, you can determine whether new code has helped or hurt performance.
+usually based on load test result we do profling to dig deeper an issue
 
 3. Stress Test(over threshold): A stress test is a test that pushes an application beyond normal load conditions.  When you push your application to the extreme, you will see which components fail first.  Making these components more robust, or efficient, will help determine new thresholds.
 
