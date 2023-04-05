@@ -27,4 +27,7 @@ For example:
 - localstack
 - kafka
 
+3- https://hub.docker.com/r/postman/newman/
+Newman is a command-line collection runner for Postman. It allows you to effortlessly run and test a Postman Collections directly from the command-line
+
 
